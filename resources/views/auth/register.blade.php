@@ -7,21 +7,21 @@
 
             <input type="text"
                 class="border border-gray-200 rounded-md bg-gray-200 w-full  text-lg placeholder-gray-900 p-2 my-2 focus:bg-white"
-                placeholder="Nombres" id="name" name="name" required>
+                value="{{old('name')}}" placeholder="Nombres" id="name" name="name" >
             @error('name')
-                <small class="text-danger">{{ $message }}</small>
+                <small class="font-semibold" style="color: red">{{ $message }}</small>
             @enderror
             <input type="email"
                 class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white"
-                placeholder="email" id="email" name="email" required>
+                value="{{old('email')}}" placeholder="email" id="email" name="email" >
             @error('email')
-                <small class="text-danger">{{ $message }}</small>
+                <small class="font-semibold" style="color: red"">{{ $message }}</small>
             @enderror
             <input type="password"
                 class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white"
-                placeholder="Password" id="password" name="password" required>
+                placeholder="Password" id="password" name="password">
             @error('password')
-                <small class="text-danger">{{ $message }}</small>
+                <small class="font-semibold" style="color: red">{{ $message }}</small>
             @enderror
             <button class="rounded-md bg-indigo-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-indigo-600"
                 type="submit">Guardar</button>

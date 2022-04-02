@@ -15,19 +15,8 @@ class RegisterController extends Controller
        return view('auth.register');
    }
    public function store(UserRequest $userR){
-    $u = new User();
-    $u->name=$userR->name;
-    $u->email=$userR->email;
-    $u->password=$userR->password;
-    $u->save();
+    User::create($userR->all());
         return redirect()->route('register.index');
    }
-   public function show(User $user){
-   }
-   public function edit(User $user){
-   }
-   public function update(Request $request){
-   }
-   public function destroy(User $user){
-   }
+   
 }

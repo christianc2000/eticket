@@ -23,9 +23,10 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
             'name'=>'required',
-            'email'=>'required',
+            'email'=>'required|unique:users,email',
             'password'=>'required'
         ];
     }
@@ -34,6 +35,7 @@ class UserRequest extends FormRequest
         return [
             'name.required'=>'ERROR: nombres requerido',
             'email.required'=>'ERROR: Correo requerido',
+            'email.unique'=>'¡Correo ya en uso!',
             'password.required'=>'ERROR: La contraseña no debe estar vacia'
         ];
     }
